@@ -1,0 +1,245 @@
+
+body {
+font-family: 'Lato', sans-serif;
+font-size: 100%;
+background-color: #151515;
+}
+
+*, *:before, *:after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+ul {
+list-style-type: none;
+}
+
+a, label {
+display: block;
+font-size: 1.25rem;
+text-decoration: none;
+color: #E5E5E5;
+padding: 1rem 1rem 1rem 3rem;
+cursor: pointer;
+transition: all .3s ease;
+border-left: 4px solid rgba(255, 255, 255, 0);
+}
+a:hover, label:hover {
+color: #FFB503;
+border-left: 4px solid #ffbc1d;
+}
+
+.chk-nav {
+display: none;
+}
+
+
+.nav {
+width: 100%;
+min-height: 100px;
+position: fixed;
+z-index: 10;
+}
+
+/*_________________________________________________________________
+
+                    $NAVBAR <ul class"nav-bar"></ul> 
+____________________________________________________________________*/
+.navbar {
+width: 50%;
+}
+.navbar .sub-nav {
+display: block;
+}
+
+.sub-nav a {
+padding-left: 2rem;
+font-size: 1rem;
+}
+
+.navbar > li {
+border-top: 1px solid rgba(255, 255, 255, 0.2);
+position: relative;
+}
+
+/*_________________________________________________________________
+
+$ESTILOS PARA MODIFICAR EL LABEL SECUNDARIO DEL SUBMENU
+____________________________________________________________________*/
+.navbar .fa {
+position: absolute;
+left: 1rem;
+}
+
+.lbl-nav:after {
+content: "\25BC";
+font-size: 1rem;
+position: absolute;
+width: 100%;
+text-align: right;
+left: 0;
+padding-right: .75rem;
+line-height: 1.5rem;
+}
+
+/*_________________________________________________________________
+
+$ESTILOS PARA MODIFICAR EL LABEL PRINCIPAL O ICONO DE HAMBURGUESA
+____________________________________________________________________*/
+label[for="btn-navbar"] {
+padding: .5rem 1rem .5rem 1rem;
+font-size: 2rem;
+text-align: left;
+color: #E5E5E5;
+min-height: 2rem;
+background-color: #252525;
+}
+label[for="btn-navbar"]:hover {
+color: #E5E5E5;
+border-left: 4px solid transparent;
+}
+
+/*_________________________________________________________________
+
+$ESTILOS PARA ESCONDER LA LISTA PRINCIPAL DEL MENU
+____________________________________________________________________*/
+.navbar {
+margin-left: -100%;
+height: 100vh;
+transition: all .5s ease;
+background-color: #252525;
+}
+
+.chk-nav:checked ~ .navbar {
+margin-left: 0;
+}
+
+/*_________________________________________________________________
+
+$ESTILOS PARA ESCONDER LOS SUBMENUS 
+____________________________________________________________________*/
+.navbar .sub-nav {
+display: none;
+}
+
+.chk-nav:checked ~ .sub-nav {
+display: block;
+}
+
+/****************_________________________________________________________________*******************
+
+                                $ESTILOS PARA DESKTOP MEDIAQUERYS
+****************____________________________________________________________________*****************/
+@media all and (min-width: 48rem) {
+a, label {
+    display: block;
+    padding: 1rem 1.25rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+            /*_________________________________________________________________
+
+            $ESTILOS PARA NAVBAR 
+        ____________________________________________________________________*/
+.navbar {
+    max-width: 1200px;
+    width: 100%;
+    height: auto;
+    display: table;
+    table-layout: fixed;
+    margin: auto;
+}
+
+.navbar > li {
+    display: table-cell;
+}
+
+.chk-nav:checked ~ .navbar {
+    margin: auto;
+}
+
+        /*_________________________________________________________________
+
+            $ESTILOS PARA ESCONDER EL ICONO DE HAMBURGUESA
+        ____________________________________________________________________*/
+label[for="btn-navbar"] {
+    display: none;
+}
+
+        /*_________________________________________________________________
+
+        $ESTILOS PARA el SUBMENU 
+        ____________________________________________________________________*/
+.navbar .sub-nav {
+    display: none;
+}
+
+.navbar > ul > li {
+    postion: relative;
+}
+
+.chk-nav:checked ~ .sub-nav {
+    display: block;
+}
+
+.navbar .sub-nav {
+    width: 100%;
+    background-color: #222;
+    position: absolute;
+}
+
+.sub-nav a {
+    font-size: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+        /*_________________________________________________________________
+
+                $ESTILOS PARA LOS ICONOS
+            ____________________________________________________________________*/
+.navbar .fa {
+    position: static;
+    padding-right: .3rem;
+}
+
+.lbl-nav:after {
+    top: 0;
+    height: 100%;
+    line-height: 3.5rem;
+}
+
+        /*_________________________________________________________________
+
+                $ESTILOS PARA EL MENU PRINCIPAL
+        ____________________________________________________________________*/
+.navbar > li {
+    position: relative;
+    border-top: 4px solid #FFB503;
+}
+
+.navbar > li > a:hover, label:hover {
+    border-left: 4px solid transparent;
+}
+}
+/*_________________________________________________________________
+
+$ESTILOS PARA EL SECTION  ESTO NO TIENE NADA QUE VER CON EL MENU
+____________________________________________________________________*/
+section {
+width: 90%;
+padding: 3.5rem;
+margin: auto;
+color: #E5E5E5;
+text-align: center;
+transition: all .4s ease;
+}
+section small {
+display: block;
+padding-bottom: 1rem;
+font-size: 1rem;
+}
+section span {
+color: red;
+font-size: 1.5rem;
+}
