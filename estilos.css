@@ -2,7 +2,7 @@
 body {
 font-family: 'Lato', sans-serif;
 font-size: 100%;
-background-color: #151515;
+background-color: #fff;
 }
 
 *, *:before, *:after {
@@ -15,7 +15,7 @@ ul {
 list-style-type: none;
 }
 
-a, label {
+ul > li > a, label {
 display: block;
 font-size: 1.25rem;
 text-decoration: none;
@@ -25,19 +25,61 @@ cursor: pointer;
 transition: all .3s ease;
 border-left: 4px solid rgba(255, 255, 255, 0);
 }
-a:hover, label:hover {
+ul > li >a:hover, label:hover {
 color: #FFB503;
 border-left: 4px solid #ffbc1d;
 }
+a.tlf
+{
+    color: rgb(3, 58, 5);
+    display: inline;
+    text-decoration: none;
+    padding: 0rem;
+}
+a.tlf:hover {
+    color: rgb(55, 111, 68);
+    }
 
+    .btn {
+        background: #ff4912;
+        background-image: -webkit-linear-gradient(top, #ff4912, #990000);
+        background-image: -moz-linear-gradient(top, #ff4912, #990000);
+        background-image: -ms-linear-gradient(top, #ff4912, #990000);
+        background-image: -o-linear-gradient(top, #ff4912, #990000);
+        background-image: linear-gradient(to bottom, #ff4912, #990000);
+        -webkit-border-radius: 15;
+        -moz-border-radius: 15;
+        border-radius: 15px;
+        font-family: Arial;
+        color: #ffffff;
+        font-size: 20px;
+        padding: 10px 20px 10px 20px;
+        text-decoration: none;
+    }
+    .btn:hover {
+        background: #ff0000;
+        background-image: -webkit-linear-gradient(top, #ff0000, #f55454);
+        background-image: -moz-linear-gradient(top, #ff0000, #f55454);
+        background-image: -ms-linear-gradient(top, #ff0000, #f55454);
+        background-image: -o-linear-gradient(top, #ff0000, #f55454);
+        background-image: linear-gradient(to bottom, #ff0000, #f55454);
+        text-decoration: none;
+      }
 .chk-nav {
 display: none;
 }
-
+.icono-tlf{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+#logo{
+    width: 80%;
+    height: 80%;
+}
 
 .nav {
 width: 100%;
-min-height: 100px;
+min-height: 2rem;
 position: fixed;
 z-index: 10;
 }
@@ -129,13 +171,43 @@ display: block;
 
 /****************_________________________________________________________________*******************
 
-                                $ESTILOS PARA DESKTOP MEDIAQUERYS
+                                ESTILOS PARA DESKTOP MEDIAQUERYS
 ****************____________________________________________________________________*****************/
 @media all and (min-width: 48rem) {
 a, label {
     display: block;
     padding: 1rem 1.25rem;
     border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+aside {
+    width: 50%;
+    display: block;
+    float: left;
+    font-size: 1rem;
+
+}
+#seccion-principal{
+    width: 85%;
+    position:relative;
+    margin: auto;
+    top:3rem;
+    height: 33%;
+    min-height: 34rem;
+    padding: 3.5rem;
+    text-align: center;
+    transition: all .4s ease;
+
+}
+h1 {
+    font-size: 1.8rem;
+}
+
+.icono-tlf{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.separador-vertical{
+    margin-bottom: 2rem;
 }
 
             /*_________________________________________________________________
@@ -176,7 +248,7 @@ label[for="btn-navbar"] {
 }
 
 .navbar > ul > li {
-    postion: relative;
+    position: relative;
 }
 
 .chk-nav:checked ~ .sub-nav {
@@ -226,11 +298,12 @@ label[for="btn-navbar"] {
 
 $ESTILOS PARA EL SECTION  ESTO NO TIENE NADA QUE VER CON EL MENU
 ____________________________________________________________________*/
+/* Contenido principal */
 section {
 width: 90%;
 padding: 3.5rem;
 margin: auto;
-color: #E5E5E5;
+color: rgb(14, 14, 14);
 text-align: center;
 transition: all .4s ease;
 }
@@ -242,4 +315,23 @@ font-size: 1rem;
 section span {
 color: red;
 font-size: 1.5rem;
+}
+
+article{
+    width: 85%;
+    padding: 3.5rem;
+    margin: auto;
+    color: rgb(14, 14, 14);
+    text-align: center;
+    transition: all .4s ease;
+}
+
+
+/*  ESTILOS PARA EL MAPA DE GOOGLE  */
+#map {
+    width: 100%;
+    height: 17rem;
+    margin-bottom: 3rem;
+    position: relative;
+    float: left;
 }

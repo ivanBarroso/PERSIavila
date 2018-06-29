@@ -1,62 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <link href="estilos.css" rel="stylesheet">    
-</head>
-<body>
-   
-<nav class="nav">
-  <input class="chk-nav" type="checkbox" id="btn-navbar" />
-  <label for="btn-navbar"><i class="fa fa-bars"></i></label>
   
-  <ul class="navbar">
-    <li><a href="#"><i class="fa fa-home"></i>Inicio</a></li>
-    <li>
-        <label class="lbl-nav" for="btn-subnav1">
-          <i class="fa fa-graduation-cap"></i>Cursos
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PersiAvila</title>
+  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link href="estilos.css" rel="stylesheet">
+</head>
+
+<script type="text/javascript">
+  //variables de autocompletar
+  var map;
+  
+  function initMap(latitud, longitud) {
+        var myLatLng = { lat: parseFloat(latitud), lng: parseFloat(longitud) };
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: myLatLng,
+            zoom: 17
+        });
+
+        var marker = new google.maps.Marker({
+            map: map,
+            position: myLatLng,
+            title: 'Hello World!'
+        });
+    }
+
+  //geolocalizacion
+  function localizarUsuario() {
+      if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function (objPosition) {
+              var lon = objPosition.coords.longitude;
+              var lat = objPosition.coords.latitude;
+
+              var latlng = new google.maps.LatLng(lat, lon);
+              geocoder = new google.maps.Geocoder();
+              geocoder.geocode({ "latLng": latlng }, function (results, status) {
+                  if (status == google.maps.GeocoderStatus.OK) {
+                      if (results[0]) {
+                          $("#inputCiudad").val(results[2].formatted_address + "");
+                          $("#btBuscar").text("Lozalizando...")
+                          consultarCiudad(results[2].formatted_address);
+                      }
+                      else {
+                          alert("Direccion no encontrada")
+                      }
+                  }
+                  else {
+                      alert("Debes aceptar los permisos de geolocalización")
+                  }
+              });
+          }, function (objPositionError) {
+              switch (objPositionError.code) {
+                  case objPositionError.PERMISSION_DENIED:
+                  alert("No se ha permitido el acceso a la posición del usuario.");
+                      break;
+                  case objPositionError.POSITION_UNAVAILABLE:
+                  alert("No se ha podido acceder a la información de su posición.");
+                      break;
+                  case objPositionError.TIMEOUT:
+                      alert("El servicio ha tardado demasiado tiempo en responder.");
+                      break;
+                  default:
+                  alert("Error desconocido.");
+              }
+          }, {
+                  maximumAge: 75000,
+                  timeout: 15000
+              });
+      }
+      else {
+          content.innerHTML = "Su navegador no soporta la API de geolocalización.";
+      }
+  };
+  //fin de geolocalizacion
+
+  $(document).ready(function () {
+      $(document).ready(function () {
+          
+              //localizarUsuario();
+              initMap(40.6504129, -4.7027567);
+              return false;
+      });
+  });
+
+</script>
+<body>
+
+  <nav class="nav">
+    <input class="chk-nav" type="checkbox" id="btn-navbar" />
+    <label for="btn-navbar">
+      <i class="fa fa-bars"></i>
+    </label>
+
+    <ul class="navbar">
+      <li>
+        <a href="#">
+          <i class="fa fa-home"></i>Portada</a>
+      </li>
+      <li>
+          <a href="#quienes-somos">
+          <i class="fa fa-home"></i>Quienes somos</a>
         </label>
-        <input class="chk-nav" type="checkbox" id="btn-subnav1"/>
-      
-        <ul class="sub-nav">
-          <li><a href="#">Excel básico</a></li>
-          <li><a href="#">Diseño web</a></li>
-          <li><a href="#">Computación básica</a></li>
-          <li><a href="#">Fundamentos de programación</a></li>
-        </ul>
-              
-    </li>
-    <li>
+
+      </li>
+      <li>
         <label class="lbl-nav" for="btn-subnav2">
-             <i class="fa fa-info-circle"></i>Nosotros
+          <i class="fa fa-info-circle"></i>Servicios
         </label>
         <input class="chk-nav" type="checkbox" id="btn-subnav2" />
-        
+
         <ul class="sub-nav">
-            <li><a href="#una">Historia</a></li>
-            <li><a href="#">Servicios</a></li>
+          <li>
+            <a href="#una">•	Reparación, venta e instalación de todo tipo de persianas. Incluida la motorización y la domótica.
+            </a>
+          </li>
+          <li>
+            <a href="#">•	Reparación, venta e instalación de ventanas y cerramientos de aluminio y PVC.
+            </a>
+          </li>
+          <li>
+            <a href="#una">•	Venta de repuestos para persianas y ventanas.
+            </a>
+          </li>
+          <li>
+            <a href="#">•	Decoración interior: Venta e instalación de venecianas, stores (enrollables y plegables), cortina vertical y panel japonés
+            </a>
+          </li>
+          <li>
+            <a href="#una">•	Decoración exterior: Venta e instalación de toldos, alicantinas, pérgolas y una amplia gama de cortinas exteriores.
+            </a>
+          </li>
+          <li>
+            <a href="#">•	Reparación, venta e instalación de todo tipo de mosquiteras (fijas, enrollables, correderas, plisadas y abatibles)
+            </a>
+          </li>
+          <li>
+            <a href="#">•	Cerrajería en general.
+            </a>
+          </li>
         </ul>
-    </li>
-    <li><a href="#"><i class="fa fa-envelope"></i>Contáctenos</a></li>
-  </ul>
-  
-</nav>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-envelope"></i>Contacto</a>
+      </li>
+    </ul>
+
+  </nav>
 
 
-<section>
-  <h1>Menu responsive con css</h1>
-  <small>Made with <span>&#9829;</span> by Edwin Ramírez</small>
-  <hr />
-  <br />
- <p>
-   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id neque quae, necessitatibus possimus minima sed ipsa asperiores. Illum sunt voluptas sit beatae corporis deleniti delectus labore. Impedit aliquid ducimus consequuntur? Et unde nemo mollitia similique ea velit, veritatis nulla dolorem repudiandae deleniti, illum doloremque, molestiae expedita blanditiis. Atque odit beatae itaque ducimus amet odio, dolores adipisci fugiat, optio eaque quae, necessitatibus libero quis ea, deleniti assumenda ipsum quisquam? Amet, aperiam sapiente eligendi cumque praesentium doloribus voluptatum dolore debitis mollitia labore, harum iure. Porro, consequatur tenetur similique totam perspiciatis fugiat aliquid magni? Facere fugit laborum ipsum molestias voluptatum quidem numquam ducimus consequatur omnis obcaecati, harum, laboriosam necessitatibus officiis aut perferendis. At dolorum totam ad praesentium delectus qui pariatur, reiciendis voluptates eligendi quo maxime deserunt optio voluptatum inventore quibusdam odit beatae esse, blanditiis, atque iure voluptatem accusantium non facilis tempore? Inventore recusandae praesentium amet molestiae modi similique beatae consectetur provident a esse, at, ipsa voluptas quam deleniti voluptate quasi ex quas in, accusantium? Earum quam, a officia voluptate. Facilis enim, commodi adipisci voluptatibus doloremque eligendi voluptate cumque minima ratione aliquid non maxime delectus officiis nesciunt corporis. Tempora harum libero numquam nihil fugiat distinctio commodi iusto et, ex corporis. Fugit error voluptate minima quo excepturi, cupiditate dolor hic, quos neque ipsam distinctio voluptatibus, minus rem laborum nobis perferendis. Tempora et quis ipsa suscipit quas, minima esse, quae praesentium odio officia! Quasi voluptates, eaque pariatur impedit id consectetur facilis expedita eveniet perferendis alias rerum illum minus suscipit maxime aliquid, nesciunt obcaecati ab repudiandae quis iure nostrum nam reprehenderit doloremque at! Cupiditate minus nemo ad tenetur eaque! Laudantium distinctio reiciendis, debitis sed totam blanditiis deserunt quibusdam praesentium suscipit placeat non repellendus ullam ipsam modi unde quod nostrum facere illo repellat ab ipsa saepe. Recusandae consequuntur eius, mollitia, quae modi ex quibusdam sint amet tenetur officiis provident totam necessitatibus a, quis laborum harum. Aliquid quod porro, aut totam aliquam temporibus obcaecati ea magni quas autem ab consectetur ipsum fugiat in rem amet quia incidunt officiis. Molestiae asperiores dolor iure, consequuntur cum sapiente quo. Suscipit cumque voluptatibus veniam est unde, eligendi possimus delectus fuga laborum dignissimos placeat neque quis sequi commodi odio aspernatur. Ad repellat accusantium aliquid autem laborum harum iure, odit incidunt quod, similique quidem repellendus, aspernatur iste veniam asperiores amet. Tempore voluptatem assumenda obcaecati architecto, veniam sint ducimus nulla, nemo, dolor doloribus laborum dolore temporibus deleniti adipisci ipsum sunt, inventore? Unde illum porro eum necessitatibus possimus consectetur expedita hic id sint at, esse fugit, iste repudiandae perferendis ipsum labore delectus ipsam voluptas voluptatum quasi ab. Saepe, magnam aperiam mollitia laborum rerum nihil quis, praesentium nisi illo ratione, earum tempora. Quae laudantium ullam reprehenderit quibusdam debitis vero rerum numquam odio repellendus ea in ratione corporis cupiditate rem maiores quidem voluptatibus totam quo quasi eligendi quos recusandae excepturi vel, iusto? Similique voluptate modi libero corporis corrupti voluptas impedit quasi sed quam dolores aliquid delectus sit, quia ad quas facere alias molestias quo accusantium qui autem enim reiciendis voluptatum. Delectus officia in cumque quae magni voluptatum est quasi!
- </p>
-</section>
+  <section id="seccion-principal">
+    <aside>
+        <img class="separador-vertical" id="logo" src="img/logo1.png" width="70%" height="70%">
+        <h1 class="separador-vertical">PersiAvila</h1>
+        <h2 >C/ Burgohondo Nº5, </h2>
+          <h2 class="separador-vertical"> 05002, Avila</h2>
+        <h2 class="separador-vertical">
+          <img class="icono-tlf" src="img/tlf.png">
+          <a class="tlf" href="tel:920333199">920333199</a>
+          <img class="icono-tlf" src="img/tlf.png">
+          <a class="tlf" href="tel:685181326">685181326</a></h2>
+        <h2 class="separador-vertical"><a class="tlf separador-vertical" href="mailto:persiavila@hotmail.com">persiavila@hotmail.com</a></h2>
+
+    </aside>
+    <aside>
+      <h1 class="separador-vertical"></h1>
+          <div class="separador-vertical"id="map"></div>
+        <br><br><br><br><br>
+        <button class="btn separador-vertical">Como llegar</button>
+    </aside>
+  </section>
+  <article>
+    <h1 id="quienes-somos">Quienes somos</h1>
+    <p>
+        PERSIAVILA es una empresa con más de 30 años de experiencia, dedicada al montaje y reparación de todo tipo de persianas y carpintería de aluminio y PVC. Además, disponemos de un amplio surtido de toldos, mosquiteras, etc.
+        Nuestro equipo tiene como objetivo satisfacer las necesidades de los clientes, así como ofrecerles las mejores soluciones, ya que trabajamos con las mejores marcas y calidades del sector.
+        Pídanos presupuesto sin compromiso.
+        
+    </p>
+
+    <h1>Servicios</h1>
+    <p>
+        Los servicios que les podemos ofrecer a nuestros clientes son:
+        <ul>
+          <li>Reparación, venta e instalación de todo tipo de persianas. Incluida la motorización y la domótica.
+            </li>
+          <li>Reparación, venta e instalación de ventanas y cerramientos de aluminio y PVC.</li>
+          <li>Venta de repuestos para persianas y ventanas.</li>
+          <li>Decoración interior: Venta e instalación de venecianas, stores (enrollables y plegables), cortina vertical y panel japonés</li>
+          <li>Decoración exterior: Venta e instalación de toldos, alicantinas, pérgolas y una amplia gama de cortinas exteriores.            </li>
+          <li>Reparación, venta e instalación de todo tipo de mosquiteras (fijas, enrollables, correderas, plisadas y abatibles)
+            </li>
+            <li>Cerrajería en general.</li>
+            <li>Venga a ver nuestros amplios catálogos.</li>
+        </ul>        
+    </p>
+
+    <h1>Quienes somos</h1>
+    <p>
+        PERSIAVILA es una empresa con más de 30 años de experiencia, dedicada al montaje y reparación de todo tipo de persianas y carpintería de aluminio y PVC. Además, disponemos de un amplio surtido de toldos, mosquiteras, etc.
+        Nuestro equipo tiene como objetivo satisfacer las necesidades de los clientes, así como ofrecerles las mejores soluciones, ya que trabajamos con las mejores marcas y calidades del sector.
+        Pídanos presupuesto sin compromiso.
+        
+    </p>
+
+    <h1>Como llegar</h1>
+
+    </div>
+  </article>
 
 
 </body>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBp2U_e27JmK8A06i6WDaFlh1YwQ6hh_jI&callback=initMap"></script>
+    async defer></script>
 </html>
