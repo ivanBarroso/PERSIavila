@@ -7,6 +7,34 @@ background-color: #fff;
 *, *:before, *:after {
 margin: 0;
 padding: 0;
+box-sizing: border-box;
+
+}
+#seccion-principal{
+    width: 100%;
+    display: block;
+    position:relative;
+    margin: auto;
+    top: 3.5rem;
+    min-height: 34rem;
+    text-align: center;
+    transition: all .4s ease;
+}
+article{
+    width: 100%;
+    display: block;
+    position: relative;
+    color: rgb(14, 14, 14);
+    text-align: left;
+    padding: 7rem;
+    padding-top: 0;
+    transition: all .4s ease;
+}
+aside {
+    width:100%;
+    display: block;
+    float: left;
+    font-size: 1rem;
 }
 #menu-icono{
     font-size:1em;
@@ -65,6 +93,14 @@ a.tlf:hover {
         background-image: linear-gradient(to bottom, #ff0000, #f55454);
         text-decoration: none;
     }
+    .tlf2
+    {
+        text-decoration: none;
+        color: rgb(19, 140, 0);
+        display: inline;
+        font-size: 1rem;
+        font-weight: 900;
+    }
 .chk-nav {
 display: none;
 }
@@ -78,7 +114,8 @@ display: none;
 }
 
 .nav {
-width: 100%;
+min-width: 90%;
+max-width: 100%;
 min-height: 2rem;
 max-height: 3.5rem;
 position: fixed;
@@ -213,14 +250,7 @@ aside {
     float: left;
     font-size: 1rem;
 }
-.tlf2
-{
-    text-decoration: none;
-    color: rgb(19, 140, 0);
-    display: inline;
-    font-size: 1rem;
-    font-weight: 900;
-}
+
 .container.font-size5 {
     font-size: 20px;
 }
@@ -359,7 +389,7 @@ font-size: 1.5rem;
 /*  ESTILOS PARA EL MAPA DE GOOGLE  */
 #map {
     width: 100%;
-    height: 17rem;
+    height: 15rem;
     margin-bottom: 3rem;
     position: relative;
     float: left;
