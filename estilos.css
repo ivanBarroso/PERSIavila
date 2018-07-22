@@ -10,7 +10,9 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
-
+#menu-icono{
+    font-size:1em;
+}
 ul {
 list-style-type: none;
 }
