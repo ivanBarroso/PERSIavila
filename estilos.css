@@ -1,7 +1,6 @@
 body {
 font-family: sans-serif;
 font-size: 100%;
-background-color: #fff;
 }
 
 *, *:before, *:after {
@@ -11,11 +10,12 @@ box-sizing: border-box;
 
 }
 #seccion-principal{
+    padding-top: 6rem;
     width: 100%;
     display: block;
     position:relative;
     margin: auto;
-    min-height: 34rem;
+    min-height: 40rem;
     margin: 0rem;
     text-align: center;
     transition: all .4s ease;
@@ -25,7 +25,6 @@ section
     width: 90%;
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
-
     margin: auto;
     color: rgb(14, 14, 14);
     text-align: center;
@@ -34,12 +33,16 @@ section
 article{
     width: 100%;
     display: block;
+    font-size: 1.3rem;
     position: relative;
     color: rgb(14, 14, 14);
     text-align: left;
-    padding: .9rem;
+    padding: 1.2rem;
     padding-top: 0;
     transition: all .4s ease;
+}
+article > ul > li{
+    margin-left: 2rem;
 }
 aside {
     width:100%;
@@ -229,161 +232,8 @@ ____________________________________________________________________*/
     margin-bottom: 20rem;
 }
 
-/****************_________________________________________________________________*******************
-
-                                ESTILOS PARA PC
-****************____________________________________________________________________*****************/
-@media all and (min-width: 48rem) {
-body, article{
-    width: 100%;
-}
-a, label {
-    display: block;
-    padding: 1rem 1.25rem;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-#seccion-principal{
-    width: 100%;
-    display: block;
-    position:relative;
-    margin: auto;
-    top: 3.5rem;
-    min-height: 34rem;
-    text-align: center;
-    transition: all .4s ease;
-}
-section 
-{
-width: 90%;
-padding: 3.5rem;
-margin: auto;
-color: rgb(14, 14, 14);
-text-align: center;
-transition: all .4s ease;
-}
-article{
-    width: 100%;
-    display: block;
-    position: relative;
-    color: rgb(14, 14, 14);
-    text-align: left;
-    padding: 7rem;
-    padding-top: 0;
-    transition: all .4s ease;
-}
-aside {
-    width: 50%;
-    display: block;
-    float: left;
-    font-size: 1rem;
-}
-
-.container.font-size5 {
-    font-size: 20px;
-}
-article > h1{
-    font-size: 1.8rem;
-}
-article > p{
-    line-height: 1.6em;
-    padding: 0.5rem;
-}
-.icono-tlf{
-    width: 1.5rem;
-    height: 1.5rem;
-}
-.separador-vertical{
-    margin-bottom: 2rem;
-}
-
-            /*_________________________________________________________________
-
-            $ESTILOS PARA NAVBAR 
-        ____________________________________________________________________*/
-.navbar {
-    width: 100%;
-    height: auto;
-    display: table;
-    table-layout: fixed;
-    margin: auto;
-}
-
-.navbar > li {
-    display: table-cell;
-}
-
-.chk-nav:checked ~ .navbar {
-    margin: auto;
-}
-
-        /*_________________________________________________________________
-
-            $ESTILOS PARA ESCONDER EL ICONO DE HAMBURGUESA
-        ____________________________________________________________________*/
-label[for="btn-navbar"] {
-    display: none;
-}
-
-        /*_________________________________________________________________
-
-        $ESTILOS PARA el SUBMENU 
-        ____________________________________________________________________*/
-.navbar .sub-nav {
-    display: none;
-}
-
-.navbar > ul > li {
-    position: relative;
-}
-
-.chk-nav:checked ~ .sub-nav {
-    display: block;
-}
-
-.navbar .sub-nav {
-    width: 100%;
-    background-color: #222;
-    position: absolute;
-}
-
-.sub-nav a {
-    font-size: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-        /*_________________________________________________________________
-
-                $ESTILOS PARA LOS ICONOS
-            ____________________________________________________________________*/
-.navbar .fa {
-    position: static;
-    padding-right: .3rem;
-}
-
-.lbl-nav:after {
-    top: 0;
-    height: 100%;
-    line-height: 3.5rem;
-}
-
-        /*_________________________________________________________________
-
-                $ESTILOS PARA EL MENU PRINCIPAL
-        ____________________________________________________________________*/
-.navbar > li {
-    position: relative;
-    border-top: 4px solid #FFB503;
-}
-
-.navbar > li > a:hover, label:hover {
-    border-left: 4px solid transparent;
-}
-}  
-/*  FIN DE ESTILO PARA VISTA PC */
-/*_________________________________________________________________
-
-$ESTILOS PARA EL SECTION  ESTO NO TIENE NADA QUE VER CON EL MENU
+/* 
+    ESTILOS PARA EL SECTION  ESTO NO TIENE NADA QUE VER CON EL MENU
 ____________________________________________________________________*/
 /* Contenido principal */
 
@@ -397,14 +247,164 @@ color: red;
 font-size: 1.5rem;
 }
 
-/*article{
-    width: 100%;
-    padding: 1rem;
+
+/****************_________________________________________________________________*******************
+
+                                ESTILOS PARA PC
+****************____________________________________________________________________*****************/
+@media all and (min-width: 48rem) {
+    body, article{
+        width: 100%;
+    }
+    a, label {
+        display: block;
+        padding: 1rem 1.25rem;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #seccion-principal{
+        width: 100%;
+        display: block;
+        position:relative;
+        margin: auto;
+        top: 3.5rem;
+        min-height: 34rem;
+        text-align: center;
+        transition: all .4s ease;
+    }
+    section 
+    {
+    width: 90%;
+    padding: 3.5rem;
     margin: auto;
     color: rgb(14, 14, 14);
-    text-align: left;
+    text-align: center;
     transition: all .4s ease;
-}*/
+    }
+    article{
+        width: 100%;
+        display: block;
+        position: relative;
+        color: rgb(14, 14, 14);
+        text-align: left;
+        padding: 7rem;
+        padding-top: 0;
+        transition: all .4s ease;
+    }
+    aside {
+        width: 50%;
+        display: block;
+        float: left;
+        font-size: 1rem;
+    }
+
+    .container.font-size5 {
+        font-size: 20px;
+    }
+    article > h1{
+        font-size: 1.8rem;
+    }
+    article > p{
+        line-height: 1.6em;
+        padding: 0.5rem;
+    }
+    .icono-tlf{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .separador-vertical{
+        margin-bottom: 2rem;
+    }
+
+                /*_________________________________________________________________
+
+                $ESTILOS PARA NAVBAR 
+            ____________________________________________________________________*/
+    .navbar {
+        width: 100%;
+        height: auto;
+        display: table;
+        table-layout: fixed;
+        margin: auto;
+    }
+
+    .navbar > li {
+        display: table-cell;
+    }
+
+    .chk-nav:checked ~ .navbar {
+        margin: auto;
+    }
+
+            /*_________________________________________________________________
+
+                $ESTILOS PARA ESCONDER EL ICONO DE HAMBURGUESA
+            ____________________________________________________________________*/
+    label[for="btn-navbar"] {
+        display: none;
+    }
+
+            /*_________________________________________________________________
+
+            $ESTILOS PARA el SUBMENU 
+            ____________________________________________________________________*/
+    .navbar .sub-nav {
+        display: none;
+    }
+
+    .navbar > ul > li {
+        position: relative;
+    }
+
+    .chk-nav:checked ~ .sub-nav {
+        display: block;
+    }
+
+    .navbar .sub-nav {
+        width: 100%;
+        background-color: #222;
+        position: absolute;
+    }
+
+    .sub-nav a {
+        font-size: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+            /*_________________________________________________________________
+
+                    $ESTILOS PARA LOS ICONOS
+                ____________________________________________________________________*/
+    .navbar .fa {
+        position: static;
+        padding-right: .3rem;
+    }
+
+    .lbl-nav:after {
+        top: 0;
+        height: 100%;
+        line-height: 3.5rem;
+    }
+
+            /*_________________________________________________________________
+
+                    $ESTILOS PARA EL MENU PRINCIPAL
+            ____________________________________________________________________*/
+    .navbar > li {
+        position: relative;
+        border-top: 4px solid #FFB503;
+    }
+
+    .navbar > li > a:hover, label:hover {
+        border-left: 4px solid transparent;
+    }
+}  
+
+
+
+/*  ----- - - - - - --  - - -  -- - - - - - - - --- - -   - - - - - 
+    FIN DE ESTILO PARA VISTA PC */
+/*_________________________________________________________________
 
 
 
