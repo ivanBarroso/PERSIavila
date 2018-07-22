@@ -1,6 +1,5 @@
-
 body {
-font-family: 'Lato', sans-serif;
+font-family: sans-serif;
 font-size: 100%;
 background-color: #fff;
 }
@@ -13,7 +12,7 @@ box-sizing: border-box;
 #menu-icono{
     font-size:1em;
 }
-ul {
+.navbar ul {
 list-style-type: none;
 }
 
@@ -109,7 +108,7 @@ position: relative;
 
 /*_________________________________________________________________
 
-$ESTILOS PARA MODIFICAR EL LABEL SECUNDARIO DEL SUBMENU
+ ESTILOS PARA MODIFICAR EL LABEL SECUNDARIO DEL SUBMENU
 ____________________________________________________________________*/
 .navbar .fa {
 position: absolute;
@@ -132,16 +131,16 @@ line-height: 1.5rem;
 $ESTILOS PARA MODIFICAR EL LABEL PRINCIPAL O ICONO DE HAMBURGUESA
 ____________________________________________________________________*/
 label[for="btn-navbar"] {
-padding: .5rem 1rem .5rem 1rem;
-font-size: 2rem;
-text-align: left;
-color: #E5E5E5;
-min-height: 2rem;
-background-color: #252525;
+    padding: .5rem 1rem .5rem 1rem;
+    font-size: 2rem;
+    text-align: left;
+    color: #E5E5E5;
+    min-height: 2rem;
+    background-color: #252525;
 }
 label[for="btn-navbar"]:hover {
-color: #E5E5E5;
-border-left: 4px solid transparent;
+    color: #E5E5E5;
+    border-left: 4px solid transparent;
 }
 
 /*_________________________________________________________________
@@ -149,14 +148,14 @@ border-left: 4px solid transparent;
 $ESTILOS PARA ESCONDER LA LISTA PRINCIPAL DEL MENU
 ____________________________________________________________________*/
 .navbar {
-margin-left: -100%;
-height: 100vh;
-transition: all .5s ease;
-background-color: #252525;
+    margin-left: -100%;
+    height: 100vh;
+    transition: all .5s ease;
+    background-color: #252525;
 }
 
 .chk-nav:checked ~ .navbar {
-margin-left: 0;
+    margin-left: 0;
 }
 
 /*_________________________________________________________________
@@ -164,46 +163,71 @@ margin-left: 0;
 $ESTILOS PARA ESCONDER LOS SUBMENUS 
 ____________________________________________________________________*/
 .navbar .sub-nav {
-display: none;
+    display: none;
 }
 
 .chk-nav:checked ~ .sub-nav {
-display: block;
+    display: block;
 }
 
 /****************_________________________________________________________________*******************
 
-                                ESTILOS PARA DESKTOP MEDIAQUERYS
+                                ESTILOS PARA PC
 ****************____________________________________________________________________*****************/
 @media all and (min-width: 48rem) {
+body, article{
+    width: 100%;
+}
 a, label {
     display: block;
     padding: 1rem 1.25rem;
     border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#seccion-principal{
+    width: 100%;
+    display: block;
+    position:relative;
+    margin: auto;
+    top: 3.5rem;
+    min-height: 34rem;
+    text-align: center;
+    transition: all .4s ease;
+}
+article{
+    width: 100%;
+    display: block;
+    position: relative;
+    color: rgb(14, 14, 14);
+    text-align: left;
+    padding: 7rem;
+    padding-top: 0;
+    transition: all .4s ease;
 }
 aside {
     width: 50%;
     display: block;
     float: left;
     font-size: 1rem;
-
 }
-#seccion-principal{
-    width: 85%;
-    position:relative;
-    margin: auto;
-    top:3rem;
-    height: 33%;
-    min-height: 34rem;
-    padding: 3.5rem;
-    text-align: center;
-    transition: all .4s ease;
-
+.tlf2
+{
+    text-decoration: none;
+    color: rgb(19, 140, 0);
+    display: inline;
+    font-size: 1rem;
+    font-weight: 900;
 }
-h1 {
+.container.font-size5 {
+    font-size: 20px;
+}
+article > h1{
     font-size: 1.8rem;
 }
-
+article > p{
+    line-height: 1.6em;
+    padding: 0.5rem;
+}
 .icono-tlf{
     width: 1.5rem;
     height: 1.5rem;
@@ -217,7 +241,6 @@ h1 {
             $ESTILOS PARA NAVBAR 
         ____________________________________________________________________*/
 .navbar {
-    max-width: 1200px;
     width: 100%;
     height: auto;
     display: table;
@@ -295,7 +318,8 @@ label[for="btn-navbar"] {
 .navbar > li > a:hover, label:hover {
     border-left: 4px solid transparent;
 }
-}
+}  
+/*  FIN DE ESTILO PARA VISTA PC */
 /*_________________________________________________________________
 
 $ESTILOS PARA EL SECTION  ESTO NO TIENE NADA QUE VER CON EL MENU
@@ -319,14 +343,14 @@ color: red;
 font-size: 1.5rem;
 }
 
-article{
-    width: 85%;
-    padding: 3.5rem;
+/*article{
+    width: 100%;
+    padding: 1rem;
     margin: auto;
     color: rgb(14, 14, 14);
-    text-align: center;
+    text-align: left;
     transition: all .4s ease;
-}
+}*/
 
 
 /*  ESTILOS PARA EL MAPA DE GOOGLE  */
