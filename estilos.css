@@ -64,7 +64,7 @@ a.tlf:hover {
         background-image: -o-linear-gradient(top, #ff0000, #f55454);
         background-image: linear-gradient(to bottom, #ff0000, #f55454);
         text-decoration: none;
-      }
+    }
 .chk-nav {
 display: none;
 }
@@ -86,7 +86,7 @@ z-index: 10;
 
 /*_________________________________________________________________
 
-                    $NAVBAR <ul class"nav-bar"></ul> 
+                    NAVBAR <ul class"nav-bar"></ul> 
 ____________________________________________________________________*/
 .navbar {
 width: 50%;
