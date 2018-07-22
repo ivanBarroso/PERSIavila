@@ -65,7 +65,7 @@ aside {
     position: relative;
     float: left;
 }
-.navbar ul {
+.navbar > ul {
 list-style-type: none;
 }
 
@@ -168,6 +168,7 @@ border-top: 1px solid rgba(255, 255, 255, 0.2);
 position: relative;
 }
 
+
 /*_________________________________________________________________
 
  ESTILOS PARA MODIFICAR EL LABEL SECUNDARIO DEL SUBMENU
@@ -215,10 +216,11 @@ ____________________________________________________________________*/
     transition: all .5s ease;
     background-color: #252525;
 }
-
 .chk-nav:checked ~ .navbar {
     margin-left: 0;
 }
+
+
 
 /*_________________________________________________________________
 
@@ -335,9 +337,6 @@ font-size: 1.5rem;
         display: table-cell;
     }
 
-    .chk-nav:checked ~ .navbar {
-        margin: auto;
-    }
 
             /*_________________________________________________________________
 
@@ -346,6 +345,8 @@ font-size: 1.5rem;
     label[for="btn-navbar"] {
         display: none;
     }
+
+    
 
             /*_________________________________________________________________
 

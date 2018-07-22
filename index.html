@@ -83,10 +83,14 @@
 
   $(document).ready(function () {
       $(document).ready(function () {
-          
-              //localizarUsuario();
-              initMap(40.6504129, -4.7027567);
-              return false;
+      $(".navbar").click(function() {      
+        $( ".chk-nav").prop('checked', false);
+      });
+
+      
+        //localizarUsuario();
+        initMap(40.6504129, -4.7027567);
+        return false;
       });
   });
 
@@ -99,11 +103,10 @@
         <span id="menu-icono">&#9776</span>
       <i class="fa fa-bars"></i>
     </label>
-
     <ul class="navbar">
       <li>
         <a href="#logo">
-          <i class="fa fa-home"></i>Portada</a>
+          <i id="li-menu" class="fa fa-home"></i>Portada</a>
       </li>
       <li>
           <a href="#quienes-somos">
